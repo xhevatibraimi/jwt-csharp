@@ -98,7 +98,7 @@ namespace JwtDemo.ConsoleDemo
         {
             var header = new
             {
-                alg = "SHA256",
+                alg = "HS256",
                 typ = "JWT"
             };
 
@@ -135,10 +135,11 @@ namespace JwtDemo.ConsoleDemo
         private static string GetSignature(string input, string secret)
         {
             var secretBytes = Encoding.UTF8.GetBytes(secret);
-            using var hmac = new HMACSHA256(secretBytes);
+
+            using var hashedBytes = new HMACSHA256(secretBytes);
 
             // Convert the input string to a byte array and compute the hash.
-            byte[] data = hmac.ComputeHash(Encoding.UTF8.GetBytes(input));
+            byte[] data = hashedBytes.ComputeHash(Encoding.UTF8.GetBytes(input));
 
             // Create a new Stringbuilder to collect the bytes
             // and create a string.
@@ -151,8 +152,10 @@ namespace JwtDemo.ConsoleDemo
                 sBuilder.Append(data[i].ToString("x2"));
             }
 
-            // Return the hexadecimal string.
-            return sBuilder.ToString();
+            // hexadecimal string.
+            var signature = sBuilder.ToString();
+            // return base64 encoding of the signature;
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(signature)).TrimEnd('=');
         }
     }
 }
