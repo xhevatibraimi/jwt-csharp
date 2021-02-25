@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtDemo.ConsoleDemo", "JwtDemo.DemoConsole\JwtDemo.ConsoleDemo.csproj", "{27590900-10D2-4C9D-90F6-8136309BCC37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtDemo.WebDemo", "JwtDemo.WebDemo\JwtDemo.WebDemo.csproj", "{F18B6DED-86E9-44E7-A19A-979B6D8D87A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C31ACED9-CAC2-48E7-AA6C-93F22BB72EA8}"
+	ProjectSection(SolutionItems) = preProject
+		stylecop.ruleset = stylecop.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{27590900-10D2-4C9D-90F6-8136309BCC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27590900-10D2-4C9D-90F6-8136309BCC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27590900-10D2-4C9D-90F6-8136309BCC37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18B6DED-86E9-44E7-A19A-979B6D8D87A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18B6DED-86E9-44E7-A19A-979B6D8D87A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18B6DED-86E9-44E7-A19A-979B6D8D87A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18B6DED-86E9-44E7-A19A-979B6D8D87A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
