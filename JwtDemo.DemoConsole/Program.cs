@@ -11,9 +11,9 @@ namespace JwtDemo.ConsoleDemo
 
         static void Main(string[] args)
         {
-            GenerateTokenDemo();
+            //GenerateTokenDemo();
             DecodeTokenDemo();
-            VerifyTokenDemo();
+            //VerifyTokenDemo();
         }
 
         private static void GenerateTokenDemo()
@@ -69,17 +69,21 @@ namespace JwtDemo.ConsoleDemo
 
             var headerBase64String = NormalizeToBase64String(tokenSplit[0]);
             var payloadBase64String = NormalizeToBase64String(tokenSplit[1]);
+            var signatureBase64String = NormalizeToBase64String(tokenSplit[2]);
 
             var headerBytes = Convert.FromBase64String(headerBase64String);
             var payloadBytes = Convert.FromBase64String(payloadBase64String);
+            var signatureBytes = Convert.FromBase64String(signatureBase64String);
 
             var headerJsonString = Encoding.UTF8.GetString(headerBytes);
             var payloadJsonString = Encoding.UTF8.GetString(payloadBytes);
+            var signatureString = Encoding.UTF8.GetString(signatureBytes);
 
             return new JwtToken
             {
                 Header = JsonConvert.DeserializeObject(headerJsonString),
                 Payload = JsonConvert.DeserializeObject(payloadJsonString),
+                Signature = signatureString
             };
         }
 
